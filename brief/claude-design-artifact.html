@@ -1,0 +1,408 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>海堤灣 1B-39A 平面佈局</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+HK:wght@400;500;700&display=swap">
+<style>
+/* Layout: left = zoomable orthogonal plan (mm), right = zone detail panel; stacks on phones. */
+:root{
+  --bg:#F3F2EE; --panel:#FBFAF7; --ink:#243438; --mute:#617176; --line:#D6D9D4;
+  --sage:#7E9B85; --sage-soft:#DDE7DE; --oak:#E7D7BB; --oak-d:#C8AD84; --mist:#DEE4E2;
+  --wall:#8E9798; --glass:#9CC2CF; --red:#BE4330; --amber:#A8700F; --green:#3A7A55;
+  --fw:#F8F1E3; --fg:#C5CCCA; --fwh:#FFFFFF; --fd:#42535A; --chip:#E8EAE5;
+  --display:'Bricolage Grotesque','Noto Sans HK',system-ui,sans-serif;
+  --body:'Noto Sans HK',system-ui,-apple-system,'PingFang HK',sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#151B1D; --panel:#1D2528; --ink:#E7ECEA; --mute:#9BA9AC; --line:#334145;
+  --sage:#8FB197; --sage-soft:#27352D; --oak:#4B4231; --oak-d:#7C6948; --mist:#2A3437;
+  --wall:#5D686B; --glass:#4B7886; --red:#E5765F; --amber:#E2AA4C; --green:#6FC08F;
+  --fw:#5B4D38; --fg:#47565A; --fwh:#3B484D; --fd:#AEBBBE; --chip:#273034; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#151B1D; --panel:#1D2528; --ink:#E7ECEA; --mute:#9BA9AC; --line:#334145;
+  --sage:#8FB197; --sage-soft:#27352D; --oak:#4B4231; --oak-d:#7C6948; --mist:#2A3437;
+  --wall:#5D686B; --glass:#4B7886; --red:#E5765F; --amber:#E2AA4C; --green:#6FC08F;
+  --fw:#5B4D38; --fg:#47565A; --fwh:#3B484D; --fd:#AEBBBE; --chip:#273034; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:14px;line-height:1.6;
+  padding-block:20px 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:8px 24px}
+h1{font-family:var(--display);font-size:clamp(22px,3.4vw,32px);line-height:1.15;margin:0;font-weight:700;text-wrap:balance}
+.meta{font-family:var(--mono);font-size:12px;color:var(--mute)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font:inherit;font-size:13px;border:1px solid var(--line);background:var(--chip);color:var(--ink);padding:6px 12px;border-radius:6px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip:focus-visible,.tog:focus-visible,.go:focus-visible{outline:2px solid var(--sage);outline-offset:2px}
+.chip .n{font-family:var(--mono);font-size:11px;opacity:.7;margin-left:4px}
+main{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:900px){main{grid-template-columns:minmax(0,1fr)}}
+.plan{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px;min-width:0}
+.tools{display:flex;gap:14px;flex-wrap:wrap;padding:2px 4px 8px;font-size:13px}
+.tog{display:flex;gap:6px;align-items:center;cursor:pointer}
+.tog input{accent-color:var(--sage)}
+svg{display:block;width:100%;height:auto;aspect-ratio:5/4;background:var(--bg);border-radius:4px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px;min-width:0}
+.panel h2{font-family:var(--display);font-size:22px;margin:0 0 2px;text-wrap:balance}
+.sub{font-family:var(--mono);font-size:12px;color:var(--mute);margin:0 0 12px}
+.panel h3{font-size:12px;letter-spacing:.08em;color:var(--mute);margin:18px 0 6px;font-weight:700;text-transform:uppercase}
+.panel p{margin:0 0 8px;max-width:62ch}
+ul.fl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
+ul.fl li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed var(--line);padding:3px 0}
+ul.fl li span:last-child{font-family:var(--mono);font-size:12px;color:var(--mute);text-align:right;flex:none}
+.chk{display:flex;flex-direction:column;gap:8px}
+.ck{display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:start}
+.tag{font-family:var(--mono);font-size:11px;padding:1px 6px;border-radius:4px;color:#fff;white-space:nowrap;margin-top:2px}
+.tag.ok{background:var(--green)} .tag.warn{background:var(--amber)} .tag.bad{background:var(--red)} .tag.info{background:var(--mute)}
+.ck b{font-weight:700}
+.go{font:inherit;font-size:12px;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:4px;padding:1px 8px;cursor:pointer;margin-left:6px}
+.sw{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 10px}
+.sw span{display:flex;align-items:center;gap:6px;font-size:12px}
+.sw i{width:22px;height:22px;border-radius:4px;border:1px solid var(--line);display:inline-block}
+.note{font-size:12.5px;color:var(--mute)}
+/* svg styling */
+.wall{fill:var(--wall)} .fl-oak{fill:var(--oak)} .fl-tile{fill:var(--mist)} .fl-deck{fill:var(--oak-d);fill-opacity:.55}
+.fl-out{fill:var(--bg);stroke:var(--wall);stroke-dasharray:4 3;stroke-width:1;vector-effect:non-scaling-stroke}
+.gapfill{fill:var(--oak)} .gapfill.tile{fill:var(--mist)}
+.room{cursor:pointer}
+.win{stroke:var(--glass);stroke-width:3;vector-effect:non-scaling-stroke}
+.door{fill:none;stroke:var(--mute);stroke-width:1;vector-effect:non-scaling-stroke}
+.door.dash{stroke-dasharray:4 3}
+.fu{stroke:var(--ink);stroke-opacity:.55;stroke-width:1;vector-effect:non-scaling-stroke}
+.f-wood{fill:var(--fw)} .f-gray{fill:var(--fg)} .f-white{fill:var(--fwh)} .f-dark{fill:var(--fd)} .f-sage{fill:var(--sage)} .f-glass{fill:var(--glass)}
+.f-zone{fill:var(--sage);fill-opacity:.18;stroke:var(--sage);stroke-dasharray:5 4;stroke-width:1.2;vector-effect:non-scaling-stroke}
+.f-conf{fill:var(--red);fill-opacity:.16;stroke:var(--red);stroke-dasharray:5 4;stroke-width:1.5;vector-effect:non-scaling-stroke}
+svg text{font-family:var(--body);fill:var(--ink);pointer-events:none;text-anchor:middle}
+.rl{font-size:calc(var(--fs)*1.35);font-weight:700;fill:var(--ink);opacity:.8}
+.fl-lbl{font-size:var(--fs)}
+.cf-lbl{font-size:var(--fs);fill:var(--red);font-weight:700}
+.dim line{stroke:var(--red);stroke-width:1;vector-effect:non-scaling-stroke}
+.dim text{font-family:var(--mono);font-size:calc(var(--fs)*.95);fill:var(--red);paint-order:stroke;stroke:var(--bg);stroke-width:calc(var(--fs)*.3)}
+.fl-lbl{paint-order:stroke;stroke:var(--bg);stroke-width:calc(var(--fs)*.12);stroke-opacity:.5}
+svg.focus .dm:not(.sel){opacity:.3}
+svg.focus .room:not(.sel){opacity:.45}
+svg.nofu .furn{display:none} svg.nodim .dim{display:none} svg.nocf .conf{display:none}
+svg:not(.zoomed) .fl-lbl{display:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+<header>
+  <h1>日出康城 海堤灣 1B 座 39 樓 A 室</h1>
+  <div class="meta">實用 612 呎 · 2 人 + 1 貓 · Nordic Coastal Minimalist</div>
+</header>
+<div class="chips" id="chips" role="group" aria-label="選擇空間"></div>
+<main>
+  <section class="plan">
+    <div class="tools">
+      <label class="tog"><input type="checkbox" id="tFu" checked> 傢俬</label>
+      <label class="tog"><input type="checkbox" id="tDim" checked> 尺寸(mm)</label>
+      <label class="tog"><input type="checkbox" id="tCf" checked> 標示衝突位</label>
+      <label class="tog" id="bedWrap" hidden><input type="checkbox" id="tBed"> 睡房：墨菲床打開</label>
+    </div>
+    <svg id="svg" viewBox="-600 -1400 9500 7400" role="img" aria-label="單位平面佈局圖，按圖則尺寸轉正重繪">
+      <defs>
+        <pattern id="hatch" width="140" height="140" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <line x1="0" y1="0" x2="0" y2="140" stroke="var(--wall)" stroke-width="18" stroke-opacity=".35"/>
+        </pattern>
+      </defs>
+      <g id="gWalls"></g><g id="gFloors"></g><g id="gGaps"></g><g id="gDoors"></g>
+      <g id="gFurn" class="furn"></g><g id="gConf" class="conf"></g><g id="gDims"></g><g id="gLbl"></g>
+    </svg>
+    <p class="note" style="margin:8px 4px 0">平面圖已由圖則的斜角轉正成直角，位置為重構，比例按 mm。牆身灰色，紅線為尺寸，紅色虛線框為同圖則撞咗嘅位。點擊房間或上面按鈕放大。</p>
+  </section>
+  <aside class="panel" id="panel" aria-live="polite"></aside>
+</main>
+</div>
+
+<script>
+/* ---------- geometry (mm, u→x right, v→y down; origin = living top-left at window wall) ---------- */
+var ROOMS=[
+ {z:'living entry',id:'LIV/DIN',l:'客飯廳',x:0,y:0,w:2600,h:5800,f:'oak',lx:1300,ly:2750,net:1},
+ {z:'balcony',id:'BAL',l:'露台 + 工作平台',x:0,y:-1230,w:2200,h:1155,f:'deck',lx:1100,ly:-650,net:1},
+ {z:'balcony',id:'AC',l:'冷氣平台',x:2200,y:-1230,w:720,h:1155,f:'tile',lx:2560,ly:-650},
+ {z:'study',id:'STUDY',l:'書房',x:2750,y:0,w:1350,h:2050,f:'oak',lx:3425,ly:1000,net:1},
+ {z:'br',id:'BR',l:'睡房',x:4175,y:0,w:2050,h:2050,f:'oak',lx:5200,ly:1000,net:1},
+ {z:'mbr',id:'MBR',l:'主人房',x:6300,y:0,w:2250,h:2455,f:'oak',lx:7400,ly:1250,net:1},
+ {z:'living',id:'PA',l:'走廊',x:2600,y:2125,w:3700,h:875,f:'oak',lx:4450,ly:2600,net:1},
+ {z:'bath',id:'PB',l:'',x:6300,y:2530,w:2150,h:770,f:'oak',lx:0,ly:0,net:1},
+ {z:'bath',id:'BATH',l:'浴室',x:6300,y:3375,w:2150,h:1550,f:'tile',lx:7000,ly:4150,net:1},
+ {z:'kitchen',id:'KIT',l:'廚房',x:2750,y:3075,w:1550,h:2650,f:'tile',lx:3525,ly:3600,net:1},
+ {z:'',id:'VOID',l:'圖上未讀清\n(AF 平台？)',x:4400,y:3075,w:1900,h:2650,f:'out',lx:5350,ly:4400}
+];
+var GAPS=[ /* openings through walls */
+ [2750,2050,1350,75,'oak'],[4300,2050,835,75,'oak'],[6325,2455,835,75,'oak'],[6400,3300,835,75,'oak'],
+ [2600,3150,150,1000,'tile'],[800,5800,1370,100,'oak'],[100,-75,2000,75,'oak']];
+var WIN=[[2850,-12,1150],[4275,-12,1850],[6400,-12,2050],[100,-1242,2000]];
+var DOORS=[
+ {z:'entry',d:'M 800 5800 A 1000 1000 0 0 1 1800 4800 M 1800 4800 L 1800 5800',c:''},
+ {z:'br',d:'M 4300 2050 L 4300 1215 A 835 835 0 0 1 5135 2050',c:''},
+ {z:'mbr',d:'M 6325 2455 L 6325 1620 A 835 835 0 0 1 7160 2455',c:''},
+ {z:'bath',d:'M 6400 3300 L 7235 3300',c:' dash'},
+ {z:'study',d:'M 2750 2050 L 3090 1700 M 3090 1700 L 3430 2050 M 3430 2050 L 3770 1700 M 3770 1700 L 4100 2050',c:' dash'},
+ {z:'kitchen',d:'M 2600 3150 L 2600 4150',c:' dash'}
+];
+/* furniture: z, x,y,w,h, class, label, round */
+var F=[
+ /* entry */
+ ['entry',-400,4300,400,1100,'f-wood','跑鞋櫃\n到頂'],['entry',-400,4300,70,1100,'f-sage',''],
+ ['entry',0,4450,400,800,'f-wood','換鞋\n矮凳'],['entry',0,3800,45,450,'f-glass',''],
+ /* living */
+ ['living',450,450,1250,1700,'f-gray',''],
+ ['living',1650,100,950,1950,'f-gray','梳化'],['living',2400,100,200,1950,'f-dark',''],
+ ['living',0,650,350,1500,'f-wood','電視\n地櫃'],['living',0,700,45,1400,'f-dark',''],
+ ['living',20,20,520,520,'f-sage','貓樹',1],
+ ['living',0,2550,600,1100,'f-wood','摺枱'],['living',680,2680,300,300,'f-wood','',1],['living',680,3200,300,300,'f-wood','',1],
+ ['living',2150,4250,450,1450,'f-wood','Hydration\nBar'],['living',2210,4330,300,300,'f-dark',''],['living',2210,4720,300,300,'f-dark',''],['living',2210,5110,300,500,'f-sage',''],
+ ['living',1650,3150,950,1000,'f-zone','通道\n1000'],
+ /* balcony */
+ ['balcony',200,-1150,550,700,'f-wood','椅'],['balcony',800,-1150,550,700,'f-wood','椅'],['balcony',1620,-1150,540,620,'f-white','洗衣機'],
+ /* kitchen */
+ ['kitchen',3700,3075,600,700,'f-gray','雪櫃'],['kitchen',3700,3775,600,600,'f-wood','備餐'],['kitchen',3700,4375,600,600,'f-dark','電磁爐'],['kitchen',3700,4975,600,750,'f-white','水盤'],
+ ['kitchen',2750,4150,950,1575,'f-zone','通道\n950'],
+ /* study */
+ ['study',3250,100,800,1830,'f-sage','瑜伽墊'],['study',2750,900,350,1100,'f-wood','矮櫃'],['study',2750,60,60,1800,'f-dark',''],['study',4060,300,40,1500,'f-glass',''],
+ /* br */
+ ['br',4300,0,1800,800,'f-wood','1800×800 升降枱'],['br',4900,860,480,480,'f-dark','',1],
+ ['br',5225,1450,1000,600,'f-dark','機櫃'],['br',4175,0,50,2050,'f-sage',''],
+ /* mbr */
+ ['mbr',6650,100,1900,1500,'f-white','床 1500×1900'],['mbr',8250,200,280,500,'f-gray','',0],['mbr',8250,900,280,500,'f-gray','',0],
+ ['mbr',7300,1855,1250,600,'f-wood','趟門衣櫃'],
+ /* bath */
+ ['bath',6300,3550,450,600,'f-white','洗手盤'],['bath',6300,4300,450,600,'f-gray','貓砂'],['bath',7000,4350,420,575,'f-white','廁'],['bath',7700,3375,750,1550,'f-white','浴缸']
+];
+var CF=[ /* conflict markers */
+ ['br',4225,800,2000,1000,'bed','墨菲床打開 ≈2000 長'],
+ ['study',2650,0,100,2050,'cf','實心牆？'],
+ ['mbr',6650,1600,650,255,'cf','留 205'],
+ ['living',0,2550,2150,1100,'cf','餐位唔夠位']
+];
+var DIMS=[
+ {z:'all living entry',h:1,x1:0,x2:2600,y:5950,t:'2600'},
+ {z:'all living',v:1,y1:0,y2:3875,x:-260,t:'3875'},
+ {z:'all study',h:1,x1:2750,x2:4100,y:-140,t:'1350'},
+ {z:'study',v:1,y1:0,y2:2050,x:4140,t:'2050'},
+ {z:'all br',h:1,x1:4175,x2:6225,y:-140,t:'2050'},
+ {z:'br',v:1,y1:0,y2:2050,x:6262,t:'2050'},
+ {z:'all mbr',h:1,x1:6300,x2:8550,y:-140,t:'2250'},
+ {z:'all mbr',v:1,y1:0,y2:2455,x:8640,t:'2455'},
+ {z:'all balcony',v:1,y1:-1230,y2:-75,x:-160,t:'1155'},
+ {z:'balcony',h:1,x1:0,x2:2200,y:-1330,t:'≈2200'},
+ {z:'kitchen',h:1,x1:2750,x2:4300,y:5880,t:'1550'},
+ {z:'all kitchen',v:1,y1:3075,y2:5725,x:4420,t:'2650'},
+ {z:'kitchen',v:1,y1:3150,y2:4150,x:2560,t:'1000'},
+ {z:'living',v:1,y1:2125,y2:3000,x:3000,t:'875'},
+ {z:'all bath',h:1,x1:6300,x2:8450,y:5060,t:'2150'},
+ {z:'bath',v:1,y1:3375,y2:4925,x:8530,t:'1550'},
+ {z:'entry',v:1,y1:4300,y2:5400,x:-480,t:'1100'},
+ {z:'entry',h:1,x1:-400,x2:0,y:5560,t:'400'},
+ {z:'entry',h:1,x1:800,x2:2170,y:5900,t:'1370'}
+];
+var BB={all:[-700,-1500,9500,7500],entry:[-650,3550,3300,2550],living:[-350,-150,3400,6350],kitchen:[2450,2900,2400,3100],
+ study:[2450,-350,1900,2750],br:[3950,-350,2500,2750],mbr:[6050,-350,2800,3000],bath:[6050,2400,2700,2700],balcony:[-350,-1550,3500,1750]};
+
+/* ---------- content ---------- */
+var CK=function(s,t){return {s:s,t:t}};
+var Z={
+all:{n:'全屋總覽',sub:'按圖則重構 · 淨面積見下',
+ d:['整層用暖白牆身、淺白橡木紋 SPC 地板同霧灰作底，鼠尾草綠只用喺貓樹、瑜伽墊、鞋櫃洞洞板呢類小面積點綴。單位向西南，全屋啞光表面，窗簾用遮光 + 薄紗兩層，下午西斜陽光唔會反光到螢幕同電視。',
+    '動線：大門 → 玄關(跑鞋櫃) → 客飯廳 → 走廊分去書房、睡房、主人房、浴室；廚房喺客廳右手邊 1000 闊開口。',
+    '撳上面按鈕或圖上房間，逐區睇說明同尺寸核對。「核對清單」會列哂同圖則撞咗嘅位。']},
+entry:{n:'玄關 · Runner’s Hub',sub:'凹位 1100 × 400 · 大門 1370',
+ d:['凹位做到頂跑鞋櫃：斜層板 + 透氣網架 + UV 殺菌除臭燈。中層留 600 高做 Grab & Go 裝備台：洞洞板、USB-C / 磁吸充電，掛 Garmin 錶、骨傳導耳機、心率帶。換鞋矮凳(400 深)同無框弧形全身鏡放凹位外，唔入櫃。',
+    '物料：櫃身白橡木，洞洞板鼠尾草綠，網架霧灰。'],
+ list:[['跑鞋櫃(凹位)','1100×400'],['換鞋矮凳','800×400'],['全身鏡','450 闊 · 掛牆'],['Grab & Go 台','中層 600 高']],
+ ck:[CK('ok','400 深放得落跑鞋：US 10–11 碼長約 300–330，斜放層板仲有通風位。'),
+     CK('warn','容量：1100 闊每層約 4 對，扣走中層 600 高，估計約 20–24 對。呢個係按層高概算，要同太太核對鞋數。'),
+     CK('warn','換鞋凳 + 鏡喺凹位外，大門鉸位同開向圖上睇唔清，要確認門扇打開唔撞凳(圖上門 1370 疑係連門框)。'),
+     CK('warn','UV 燈、USB-C、磁吸座要預留插座同暗線。若凹位後面係結構牆，開槽有限制。')]},
+living:{n:'客飯廳',sub:'LIV/DIN 2600 × 3875(連大門段約 5800)',
+ d:['低重心淺米灰高腳布藝梳化(腳高 ≥ 150，掃地機械人入得）靠書房牆，面向側牆嘅懸浮電視地櫃。唔做電視背景牆，所以窗口同海景完全開放，坐喺梳化睇電視時海景喺左手邊。',
+    '餐邊櫃 Hydration Bar 設喺廚房門口下面：即熱水機、咖啡機、電解質粉 / 蛋白粉格。餐桌放唔落(見核對)，改用 600 深牆掛摺枱 + 兩張矮凳。貓樹放窗口角，貓可以爬上窗台望海。'],
+ list:[['梳化','950×1950'],['電視地櫃(懸浮)','350×1500'],['摺枱(打開)','600×1100'],['Hydration Bar','450×1450'],['貓樹','520×520']],
+ ck:[CK('bad','餐位：spec 冇餐桌。梳化段橫向 = 電視櫃 350 + 觀看距離 1300 + 梳化 950 = 2600，已經用盡；餐位段摺枱 600 + 凳 + 1000 通道，只可放小摺枱，唔係正式餐桌。'),
+     CK('ok','1000 通道：餐邊櫃前緣至摺枱 1550；廚房口一側保持 1000。'),
+     CK('warn','「視線直望海景」：我將電視放側牆，梳化面向電視，海景喺側面。若要梳化正面向海，電視要改投影或升降，要你決定。'),
+     CK('warn','Hydration Bar 即熱水機 + 咖啡機同時用，要兩個獨立 13A 位。')]},
+kitchen:{n:'廚房 · 窄廚',sub:'KIT 1550 × 2650 · 開口 1000',
+ d:['單邊一字型：廚櫃全部放右邊(600 深)：雪櫃 → 備餐 → 電磁爐 → 水盤，左邊墻面只做掛牆層架同磁吸刀架，不放地櫃，通道留 950。櫃身淺橡木 + 啞光霧灰石英石枱面，同客廳連成一氣。',
+    '因為走廊式，建議用推拉玻璃門代替開門，煮食油煙唔飄去客廳。貓糧碗放通道盡頭地腳位。'],
+ list:[['雪櫃(窄身)','600×700'],['備餐枱面','600×600'],['電磁爐','600×600'],['水盤','600×750'],['通道','950']],
+ ck:[CK('ok','單邊 600 深 → 通道 950，一個人煮食夠用。'),
+     CK('bad','雙邊 600 + 600 → 通道得 350，唔可以行。所以我唔做 U 型或雙邊櫃。'),
+     CK('warn','冇位放洗碗機同焗爐，要用枱面電焗爐 + 蒸焗二合一；若一定要洗碗機，要放棄一格備餐。'),
+     CK('warn','電磁爐約 7kW 級要獨立線路，同 BR 嘅 20A 專線加埋，要核對總掣負載。')]},
+study:{n:'書房 · 拉筋恢復室 + 獎牌廊',sub:'STUDY 1350 × 2050',
+ d:['半開放拉筋室：北歐淺木框清玻璃摺門。2050 長放 1830 加闊瑜伽墊後仲有 220。壁掛智能健身鏡喺右牆，左牆做木條子獎牌 + 號碼布展示，矮櫃(350 深)收筋膜槍、Foam Roller、彈力帶。',
+    '地面同客廳一樣橡木紋，唔做門檻，跑完直接入嚟拉筋。'],
+ list:[['瑜伽墊(加闊)','800×1830'],['矮櫃','350×1100'],['智能健身鏡','600×1500 · 掛牆'],['獎牌牆','1800 長']],
+ ck:[CK('ok','瑜伽墊：橫向 1350 − 矮櫃 350 = 1000，墊 800 後仲有 200；長向 2050 − 1830 = 220。'),
+     CK('bad','摺門朝客廳唔成立：圖上書房同客廳之間係灰色實心牆(約 150 厚、2050 長)，開門位喺南面，對住 875 闊走廊，打開後望到嘅係走廊，唔係海景。要由結構工程師 / 認可人士確認牆身可唔可以開，否則保留摺門喺走廊側。'),
+     CK('warn','窗外冷氣平台(720 闊)連鋁百葉喺書房窗旁，擋住部份海景，要現場睇。')]},
+br:{n:'睡房 · 先生 AI 工作站',sub:'BR 2050 × 2050',
+ d:['1800×800 白橡木電動升降枱靠窗牆，放 49 吋 ultrawide 或雙 32 吋 4K。門旁木格柵通風機櫃放全塔雙 GPU 水冷主機、NAS、UPS、10Gbps router。左牆白橡木吸音條子牆。獨立 20A 專線 + 獨立冷氣。',
+    '窗前加遮光 + 防眩光薄紗，電腦枱背光，避開西斜日照反光。'],
+ list:[['升降枱','1800×800'],['機櫃','1000×600'],['吸音條子牆','2050 長'],['墨菲床(收起)','450×1000']],
+ ck:[CK('bad','直立墨菲單人床打開要伸出約 2000，房只有 2050：打開後蓋住椅(480)、機櫃(1000×600)同門掣範圍(835)。枱 800 + 床 1000 = 1800，只剩 250，椅放唔落。可揀：① 改橫向側掀牆床(約 1900×900，伸出約 1000)；② 床只夜間打開，門改趟門；③ BR 唔做睡房，客人用客廳 sofa bed。撳「墨菲床打開」睇範圍。'),
+     CK('warn','雙 GPU 水冷高負載發熱約 800–1200W，喺 4.2 m² 房內等如開咗部電暖爐，獨立冷氣必須，機櫃出風唔好對床。'),
+     CK('warn','20A 專線要同電工確認 DB 同總掣負載，同時有電磁爐、即熱水機、咖啡機、冷氣。'),
+     CK('ok','1800 枱面 ≤ 2050 牆長，枱兩側各留 125。')]},
+mbr:{n:'主人房(補充建議)',sub:'MBR 2250 × 2455',
+ d:['spec 未定，我按同一風格補：暖白牆、淺橡木床架、霧灰布藝床頭板。Queen 床 1500×1900 床頭靠右牆，右下角放 1250 闊趟門衣櫃(600 深)，趟門唔使留開門位。窗邊用遮光窗簾 + 薄紗，鼠尾草綠只用喺床品。',
+    '貓樹已放客廳，MBR 唔放貓爬架，減低半夜打擾。'],
+ list:[['床','1500×1900'],['趟門衣櫃','1250×600'],['床尾通道','350'],['床側至衣櫃','205']],
+ ck:[CK('warn','床前緣至衣櫃只有 205，床尾通道 350，剛夠行。衣櫃要用趟門，唔好用開門。'),
+     CK('warn','MBR 圖上冇獨立浴室，我當佢共用走廊盡頭嘅浴室。')]},
+bath:{n:'浴室(補充建議)',sub:'BATH 2150 × 1550',
+ d:['淺霧灰啞光防滑磚，暖白牆。浴缸 750 闊靠右牆，加清玻璃淋浴屏；洗手盤 450×600 懸浮櫃，鼠尾草綠點綴毛巾架。浴室門用趟門唔佔位。',
+    '緬因貓貓砂盆(連罩，約 450×600)放洗手盤下面位，靠抽氣扇。'],
+ list:[['浴缸','750×1550'],['廁','420×575'],['洗手盤','450×600'],['貓砂盆','450×600']],
+ ck:[CK('ok','2150 闊：洗手盤 450 + 通道 + 廁 + 浴缸 750 排得落。'),
+     CK('warn','貓砂盆放浴室要確認通風同貓有冇入口；趟門下留 100 貓縫或改開貓閘。'),
+     CK('info','浴室尺寸 2150×1550 係我由圖上讀，同 MBR 房有重疊嘅位置唔肯定，請核對。')]},
+balcony:{n:'露台 + 工作平台',sub:'BAL.&U.P. 深 1155',
+ d:['防腐木地墊 + 兩張戶外休閒椅，做太太跑後 chill 區，望住海。右邊放洗衣機位(平台通常有去水)。冷氣平台 720 闊另外獨立，唔計入活動區。'],
+ list:[['防腐木地墊','≈1450×1050'],['休閒椅','550×700 ×2'],['洗衣機','540×620']],
+ ck:[CK('warn','洗衣機：spec 冇指定位置，我放咗喺平台。要核對平台有冇去水位同排氣；貓亦要防範唔好爬出露台。'),
+     CK('warn','露台闊度我讀為約 2200(由頂部 1351 + 909 推算)，唔肯定。')]}
+};
+var CONF=[
+ ['bad','br','BR 墨菲床打開後同枱、機櫃、門撞位','床長約 2000 對 房 2050。'],
+ ['bad','study','書房摺門朝客廳：灰色實心牆','牆約 150 厚，長 2050，要結構確認。'],
+ ['bad','living','客飯廳放唔落正式餐桌','橫向 350 + 1300 + 950 = 2600。'],
+ ['bad','kitchen','窄廚唔可以做雙邊櫃','1550 − 600×2 = 350 通道。'],
+ ['warn','br','雙 GPU 發熱 + 20A 專線負載','約 800–1200W 發熱，要電工確認 DB。'],
+ ['warn','entry','玄關：凳、鏡、大門鉸位同容量','要確認門扇開向，鞋數約 20–24 對。'],
+ ['warn','mbr','主人房床前通道 205 / 床尾 350','衣櫃要用趟門。'],
+ ['warn','study','冷氣平台擋書房窗景','720 闊 + 鋁百葉。'],
+ ['warn','balcony','洗衣機位置 spec 冇寫','暫放平台，要核對去水。'],
+ ['warn','living','電視喺側牆，梳化唔係正面向海','要你揀：投影 / 升降 / 側看。'],
+ ['info','all','面積口徑：淨面積約 35–[A] m²，612 呎係實用面積','見下面。']
+];
+
+/* ---------- render ---------- */
+var svg=document.getElementById('svg'),sel='all',cur=BB.all.slice();
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+function lines(t,x,y,cls,fs){var a=String(t).split('\n'),o='<text class="'+cls+'" x="'+x+'" y="'+y+'">';
+  a.forEach(function(s,i){o+='<tspan x="'+x+'" dy="'+(i===0?(-(a.length-1)*0.5)+'em':'1.15em')+'" '+'>'+esc(s)+'</tspan>'});return o+'</text>'}
+var E=100,netA=0;
+(function build(){
+ var w='',f='',g='',d='',fu='',cf='',dm='',lb='';
+ ROOMS.forEach(function(r){
+  if(r.id==='VOID')return;
+  w+='<rect class="wall" x="'+(r.x-E)+'" y="'+(r.y-E)+'" width="'+(r.w+2*E)+'" height="'+(r.h+2*E)+'"/>';
+  if(r.net)netA+=r.w*r.h;
+ });
+ ROOMS.forEach(function(r){
+  var c=r.f==='oak'?'fl-oak':r.f==='tile'?'fl-tile':r.f==='deck'?'fl-deck':'fl-out';
+  f+='<rect class="room dm '+c+'" data-z="'+r.z+'" data-r="'+r.id+'" x="'+r.x+'" y="'+r.y+'" width="'+r.w+'" height="'+r.h+'"/>';
+  if(r.f==='out')f+='<rect class="fl-void" fill="url(#hatch)" x="'+r.x+'" y="'+r.y+'" width="'+r.w+'" height="'+r.h+'" style="pointer-events:none"/>';
+ });
+ GAPS.forEach(function(a){g+='<rect class="gapfill '+(a[4]==='tile'?'tile':'')+'" x="'+a[0]+'" y="'+a[1]+'" width="'+a[2]+'" height="'+a[3]+'"/>'});
+ WIN.forEach(function(a){g+='<line class="win" x1="'+a[0]+'" y1="'+a[1]+'" x2="'+(a[0]+a[2])+'" y2="'+a[1]+'"/>'});
+ DOORS.forEach(function(a){d+='<path class="door dm'+a.c+'" data-z="'+a.z+'" d="'+a.d+'"/>'});
+ F.forEach(function(a){
+  var z=a[0],x=a[1],y=a[2],w=a[3],h=a[4],c=a[5],t=a[6],rd=a[7];
+  if(c==='f-zone'){fu+='<rect class="'+c+' dm" data-z="'+z+'" x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'"/>'}
+  else if(rd){fu+='<ellipse class="fu '+c+' dm" data-z="'+z+'" cx="'+(x+w/2)+'" cy="'+(y+h/2)+'" rx="'+(w/2)+'" ry="'+(h/2)+'"/>'}
+  else fu+='<rect class="fu '+c+' dm" data-z="'+z+'" x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="18"/>';
+  if(t)lb+=lines(t,x+w/2,y+h/2+0.3*0,'fl-lbl dm',1).replace('<text','<text data-z="'+z+'"');
+ });
+ CF.forEach(function(a){
+  cf+='<rect class="f-conf dm cfm'+(a[5]==='bed'?' bed':'')+'" data-z="'+a[0]+'" x="'+a[1]+'" y="'+a[2]+'" width="'+a[3]+'" height="'+a[4]+'"/>';
+ });
+ DIMS.forEach(function(a){
+  var t=70,s='<g class="dim dm" data-z="'+a.z+'">';
+  if(a.h){s+='<line x1="'+a.x1+'" y1="'+a.y+'" x2="'+a.x2+'" y2="'+a.y+'"/><line x1="'+a.x1+'" y1="'+(a.y-t)+'" x2="'+a.x1+'" y2="'+(a.y+t)+'"/><line x1="'+a.x2+'" y1="'+(a.y-t)+'" x2="'+a.x2+'" y2="'+(a.y+t)+'"/><text x="'+(a.x1+a.x2)/2+'" y="'+(a.y-30)+'">'+a.t+'</text>'}
+  else{s+='<line x1="'+a.x+'" y1="'+a.y1+'" x2="'+a.x+'" y2="'+a.y2+'"/><line x1="'+(a.x-t)+'" y1="'+a.y1+'" x2="'+(a.x+t)+'" y2="'+a.y1+'"/><line x1="'+(a.x-t)+'" y1="'+a.y2+'" x2="'+(a.x+t)+'" y2="'+a.y2+'"/><text x="'+(a.x-30)+'" y="'+(a.y1+a.y2)/2+'" transform="rotate(-90 '+(a.x-30)+' '+(a.y1+a.y2)/2+')">'+a.t+'</text>'}
+  dm+=s+'</g>';
+ });
+ ROOMS.forEach(function(r){if(r.l)lb+=lines(r.l,r.lx,r.ly,'rl dm',1).replace('<text','<text data-z="'+r.z+'"')});
+ lb+='<text class="rl dm" data-z="entry" x="1500" y="5530" style="font-weight:500;opacity:.7">大門</text>';
+ document.getElementById('gWalls').innerHTML=w;document.getElementById('gFloors').innerHTML=f;
+ document.getElementById('gGaps').innerHTML=g;document.getElementById('gDoors').innerHTML=d;
+ document.getElementById('gFurn').innerHTML=fu;document.getElementById('gConf').innerHTML=cf;
+ document.getElementById('gDims').innerHTML=dm;document.getElementById('gLbl').innerHTML=lb;
+})();
+var netM2=netA/1e6;
+
+function applySel(){
+ svg.classList.toggle('focus',sel!=='all');
+ svg.querySelectorAll('.dm').forEach(function(n){
+  var z=(n.getAttribute('data-z')||'').split(' '),on=sel==='all'||z.indexOf(sel)>-1;
+  var dm=n.classList.contains('dim');
+  if(dm){n.style.display=(sel==='all'?(z.indexOf('all')>-1):(z.indexOf(sel)>-1))?'':'none'}
+  n.classList.toggle('sel',on);
+ });
+ var bedOn=document.getElementById('tBed').checked;
+ svg.querySelectorAll('.cfm').forEach(function(n){
+  var z=n.getAttribute('data-z'),show=(sel==='all'||sel===z);
+  if(n.classList.contains('bed')){show=show&&bedOn}
+  n.style.display=show?'':'none';
+ });
+ document.getElementById('bedWrap').hidden=!(sel==='br');
+ /* closed bed rectangle toggle */
+ var cb=svg.querySelector('#closedBed');if(cb)cb.style.display=bedOn?'none':'';
+}
+function setVB(b){
+ var W=svg.clientWidth||800,H=svg.clientHeight||640,r=W/H,w=b[2],h=b[3],cx=b[0]+w/2,cy=b[1]+h/2;
+ if(w/h<r)w=h*r;else h=w/r;
+ return [cx-w/2,cy-h/2,w,h];
+}
+var raf;
+function zoomTo(id){
+ var t=setVB(BB[id]),from=cur.slice(),t0=null,rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+ svg.classList.toggle('zoomed',id!=='all');
+ function put(v){cur=v;svg.setAttribute('viewBox',v.join(' '));svg.style.setProperty('--fs',(v[2]/64)+'px')}
+ if(rm){put(t);return}
+ cancelAnimationFrame(raf);
+ function step(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/380),e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
+  put(from.map(function(a,i){return a+(t[i]-a)*e}));if(p<1)raf=requestAnimationFrame(step)}
+ raf=requestAnimationFrame(step);
+}
+function li(a){return '<li><span>'+esc(a[0])+'</span><span>'+esc(a[1])+'</span></li>'}
+function panel(){
+ var z=Z[sel],h='<h2>'+z.n+'</h2><p class="sub">'+z.sub+'</p>';
+ h+='<h3>設計說明</h3>'+z.d.map(function(p){return '<p>'+p+'</p>'}).join('');
+ if(sel==='all'){
+  var A=netM2.toFixed(1),B=Math.round(netM2*10.764);
+  h+='<h3>色板</h3><div class="sw"><span><i style="background:#F5F2EC"></i>暖白</span><span><i style="background:#E2CDAA"></i>淺白橡木</span><span><i style="background:#C9D0CE"></i>霧灰</span><span><i style="background:#8FA68E"></i>鼠尾草綠</span></div>';
+  h+='<h3>核對清單 · 同圖則撞咗嘅位</h3><div class="chk">'+CONF.map(function(c){
+   var tx=c[3].replace('[A]',A).replace('[B]',B),tl=c[2].replace('[A]',A).replace('[B]',B);
+   return '<div class="ck"><span class="tag '+c[0]+'">'+({bad:'撞咗',warn:'留意',info:'資料'}[c[0]])+'</span><div><b>'+tl+'</b><button class="go" data-go="'+c[1]+'">睇位置</button><br><span class="note">'+tx+'</span></div></div>'}).join('')+'</div>';
+  h+='<h3>面積口徑</h3><p>呢張圖係成個單位。本頁佈局用嘅係房間淨尺寸：只計你俾嘅主要尺寸約 35 m²；我重構時連大門段同走廊推算，合計約 '+A+' m²(約 '+B+' 呎)，差別來自我推算嘅位置。612 呎係實用面積口徑，包括露台、工作平台同牆身，唔等如可用淨面積，設計請以淨尺寸為準，落單前現場量度。</p>';
+  h+='<h3>我讀圖時嘅假設</h3><p class="note">① 圖則傾斜約 20–28°，已轉正。② 灰色粗牆當實心牆，雙細線當間牆。③ 走廊 875、浴室 2150×1550、廚房 1550×2650 係由尺寸線推算。④ 6220、2965、1985 呢幾條尺寸我對唔上位置，冇用。⑤ 廚房右邊嘅空位(斜線)圖上睇唔清係咩，所以標「未讀清」。⑥ PD 當喺單位外，圖左下嘅 BATH 屬隔籬單位。</p>';
+ }else{
+  if(z.list)h+='<h3>配置同尺寸(mm)</h3><ul class="fl">'+z.list.map(li).join('')+'</ul>';
+  h+='<h3>尺寸核對</h3><div class="chk">'+z.ck.map(function(c){return '<div class="ck"><span class="tag '+c.s+'">'+({ok:'OK',warn:'留意',bad:'撞咗',info:'資料'}[c.s])+'</span><div>'+c.t+'</div></div>'}).join('')+'</div>';
+ }
+ document.getElementById('panel').innerHTML=h;
+}
+function select(id,push){
+ sel=id;
+ document.querySelectorAll('.chip').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.id===id?'true':'false')});
+ applySel();panel();zoomTo(id);
+ try{if(push!==false)history.replaceState(null,'','#'+id)}catch(e){}
+}
+var order=['all','entry','living','kitchen','study','br','mbr','bath','balcony'];
+document.getElementById('chips').innerHTML=order.map(function(k){return '<button class="chip" data-id="'+k+'" aria-pressed="false">'+(k==='all'?'全屋':Z[k].n.split(' ')[0].replace('(補充建議)',''))+'</button>'}).join('');
+document.getElementById('chips').addEventListener('click',function(e){var b=e.target.closest('.chip');if(b)select(b.dataset.id)});
+document.getElementById('panel').addEventListener('click',function(e){var b=e.target.closest('.go');if(b)select(b.dataset.go)});
+svg.addEventListener('click',function(e){
+ var r=e.target.closest('.room');if(!r)return;
+ var z=(r.getAttribute('data-z')||'').split(' ')[0];
+ if(z&&Z[z])select(sel===z?'all':z);
+});
+/* closed Murphy bed marker (BR) */
+document.getElementById('gFurn').insertAdjacentHTML('beforeend','<rect id="closedBed" class="fu f-wood dm" data-z="br" x="4225" y="800" width="450" height="1000" rx="18"/>');
+document.getElementById('gLbl').insertAdjacentHTML('beforeend','<text class="fl-lbl dm" data-z="br" x="4450" y="1300">收起的床</text>');
+[['tFu','nofu'],['tDim','nodim'],['tCf','nocf']].forEach(function(p){
+ document.getElementById(p[0]).addEventListener('change',function(e){svg.classList.toggle(p[1],!e.target.checked)})});
+document.getElementById('tBed').addEventListener('change',applySel);
+window.addEventListener('resize',function(){cur=setVB(BB[sel]);svg.setAttribute('viewBox',cur.join(' '))});
+var h0='all';try{var hh=location.hash.replace('#','');if(Z[hh])h0=hh}catch(e){}
+cur=setVB(BB.all);svg.setAttribute('viewBox',cur.join(' '));svg.style.setProperty('--fs',(cur[2]/64)+'px');
+select(h0,false);
+</script>
+
+</body></html>
